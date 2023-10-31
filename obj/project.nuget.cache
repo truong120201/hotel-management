@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "kXsUDI6g0G1OPbwerJ0NcZTRsw3AUHs38d/e7jr12M5H8lctvaq+Eviycwvz4TplsnhvzIRupeqVrjs/P84Yag==",
+  "success": true,
+  "projectFilePath": "C:\\LEARN\\WINFORM\\hotel_management\\hotel_management.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\WB\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\WB\\.nuget\\packages\\npgsql\\7.0.6\\npgsql.7.0.6.nupkg.sha512",
+    "C:\\Users\\WB\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
