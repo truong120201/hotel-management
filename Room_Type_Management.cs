@@ -6,6 +6,7 @@ namespace hotel_management
     {
 
         string mode = "CREATE NEW";
+        string currentSelectedRoomID = "";
         public Room_Type_Management()
         {
             InitializeComponent();
@@ -32,9 +33,11 @@ namespace hotel_management
                     {
                         this.mode = "EDIT";
                         room_type_info_label.Text = this.mode + " // (Room ID: " + room_id + ")";
+                        button_save_room.Text = "Update";
                         textBox_room_type.Text = room_type;
                         textBox_room_price.Text = room_price;
                         textBox_room_add_on.Text = room_add_on;
+                        this.currentSelectedRoomID = room_id;
                     }
                     else if (room_type_view.Columns[e.ColumnIndex].Name.Equals("remove"))
                     {
@@ -112,6 +115,7 @@ namespace hotel_management
                     {
                         this.mode = "CREATE NEW";
                         room_type_info_label.Text = this.mode;
+                        button_save_room.Text = "Create";
                     }
 
                     textBox_room_type.Text = "";
@@ -144,5 +148,35 @@ namespace hotel_management
             room_management_d.ShowDialog();
             this.Close();
         }
+
+        private void button_save_room_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(textBox_room_type.Text) || string.IsNullOrEmpty(textBox_room_price.Text))
+            {
+                return;
+            }
+            try
+            {
+                string query = "";
+                if (this.mode == "CREATE NEW")
+                {
+                    query = "INSERT INTO room_type (type, price, add_on) VALUES ('" + textBox_room_type.Text + "', '" + textBox_room_price.Text + "', '" + textBox_room_add_on.Text + "')";
+                }
+                else if (this.mode == "EDIT")
+                {
+                    query = "UPDATE room_type SET type = '" + textBox_room_type.Text + "', price = '" + textBox_room_price.Text + "', add_on = '" + textBox_room_add_on.Text + "' WHERE room_type_id = " + this.currentSelectedRoomID;
+                }
+                var result = DB_Connection.ExecuteQuery(query);
+                result.Close();
+                room_type_view.Rows.Clear();
+                get_room_type();
+                MessageBox.Show("Room information saved successfully.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while authenticating: " + ex.Message);
+            }
+        }
+
     }
 }

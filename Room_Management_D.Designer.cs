@@ -33,9 +33,12 @@
             label1 = new Label();
             filter_room_type = new ComboBox();
             label2 = new Label();
-            filter_room_status = new ComboBox();
-            label3 = new Label();
             back_to_dashboard = new Button();
+            room_list = new DataGridView();
+            room_id = new DataGridViewTextBoxColumn();
+            price = new DataGridViewTextBoxColumn();
+            type = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)room_list).BeginInit();
             SuspendLayout();
             // 
             // room_type_management
@@ -69,11 +72,11 @@
             // 
             filter_room_type.DropDownStyle = ComboBoxStyle.DropDownList;
             filter_room_type.FormattingEnabled = true;
-            filter_room_type.Items.AddRange(new object[] { "All", "Normal", "Advance", "VIP" });
             filter_room_type.Location = new Point(12, 121);
             filter_room_type.Name = "filter_room_type";
             filter_room_type.Size = new Size(149, 23);
             filter_room_type.TabIndex = 3;
+            filter_room_type.SelectedIndexChanged += filter_room_type_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -83,25 +86,6 @@
             label2.Size = new Size(31, 15);
             label2.TabIndex = 4;
             label2.Text = "Type";
-            // 
-            // filter_room_status
-            // 
-            filter_room_status.DropDownStyle = ComboBoxStyle.DropDownList;
-            filter_room_status.FormattingEnabled = true;
-            filter_room_status.Items.AddRange(new object[] { "All", "Available", "Booked" });
-            filter_room_status.Location = new Point(236, 121);
-            filter_room_status.Name = "filter_room_status";
-            filter_room_status.Size = new Size(149, 23);
-            filter_room_status.TabIndex = 3;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(236, 103);
-            label3.Name = "label3";
-            label3.Size = new Size(39, 15);
-            label3.TabIndex = 4;
-            label3.Text = "Status";
             // 
             // back_to_dashboard
             // 
@@ -113,21 +97,47 @@
             back_to_dashboard.UseVisualStyleBackColor = true;
             back_to_dashboard.Click += back_to_dashboard_Click;
             // 
+            // room_list
+            // 
+            room_list.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            room_list.Columns.AddRange(new DataGridViewColumn[] { room_id, price, type });
+            room_list.Location = new Point(12, 181);
+            room_list.Name = "room_list";
+            room_list.RowTemplate.Height = 25;
+            room_list.Size = new Size(552, 359);
+            room_list.TabIndex = 6;
+            room_list.CellContentClick += room_list_CellContentClick;
+            // 
+            // room_id
+            // 
+            room_id.HeaderText = "RoomID";
+            room_id.Name = "room_id";
+            // 
+            // price
+            // 
+            price.HeaderText = "Price";
+            price.Name = "price";
+            // 
+            // type
+            // 
+            type.HeaderText = "Type";
+            type.Name = "type";
+            // 
             // Room_Management_D
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1122, 552);
+            Controls.Add(room_list);
             Controls.Add(back_to_dashboard);
-            Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(filter_room_status);
             Controls.Add(filter_room_type);
             Controls.Add(label1);
             Controls.Add(listView1);
             Controls.Add(room_type_management);
             Name = "Room_Management_D";
             Text = "Room Management D";
+            ((System.ComponentModel.ISupportInitialize)room_list).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -139,8 +149,10 @@
         private Label label1;
         private ComboBox filter_room_type;
         private Label label2;
-        private ComboBox filter_room_status;
-        private Label label3;
         private Button back_to_dashboard;
+        private DataGridView room_list;
+        private DataGridViewTextBoxColumn room_id;
+        private DataGridViewTextBoxColumn price;
+        private DataGridViewTextBoxColumn type;
     }
 }

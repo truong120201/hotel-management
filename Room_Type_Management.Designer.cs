@@ -45,6 +45,7 @@ namespace hotel_management
             button_cancel = new Button();
             button_save_room = new Button();
             back_to_room_management = new Button();
+            create_room_type_noti = new Label();
             ((System.ComponentModel.ISupportInitialize)room_type_view).BeginInit();
             SuspendLayout();
             // 
@@ -100,9 +101,9 @@ namespace hotel_management
             label_room_type.AutoSize = true;
             label_room_type.Location = new Point(800, 192);
             label_room_type.Name = "label_room_type";
-            label_room_type.Size = new Size(66, 15);
+            label_room_type.Size = new Size(74, 15);
             label_room_type.TabIndex = 3;
-            label_room_type.Text = "Room Type";
+            label_room_type.Text = "Room Type *";
             // 
             // textBox_room_price
             // 
@@ -117,9 +118,9 @@ namespace hotel_management
             label1.AutoSize = true;
             label1.Location = new Point(800, 242);
             label1.Name = "label1";
-            label1.Size = new Size(68, 15);
+            label1.Size = new Size(76, 15);
             label1.TabIndex = 3;
-            label1.Text = "Room Price";
+            label1.Text = "Room Price *";
             // 
             // textBox_room_add_on
             // 
@@ -139,7 +140,7 @@ namespace hotel_management
             // 
             // button_cancel
             // 
-            button_cancel.Location = new Point(800, 354);
+            button_cancel.Location = new Point(800, 368);
             button_cancel.Name = "button_cancel";
             button_cancel.Size = new Size(100, 23);
             button_cancel.TabIndex = 4;
@@ -149,12 +150,13 @@ namespace hotel_management
             // 
             // button_save_room
             // 
-            button_save_room.Location = new Point(961, 354);
+            button_save_room.Location = new Point(961, 368);
             button_save_room.Name = "button_save_room";
             button_save_room.Size = new Size(100, 23);
             button_save_room.TabIndex = 4;
-            button_save_room.Text = "Save";
+            button_save_room.Text = "Create";
             button_save_room.UseVisualStyleBackColor = true;
+            button_save_room.Click += button_save_room_Click;
             // 
             // back_to_room_management
             // 
@@ -166,11 +168,23 @@ namespace hotel_management
             back_to_room_management.UseVisualStyleBackColor = true;
             back_to_room_management.Click += back_to_room_management_Click;
             // 
+            // create_room_type_noti
+            // 
+            create_room_type_noti.AutoSize = true;
+            create_room_type_noti.ForeColor = Color.Red;
+            create_room_type_noti.Location = new Point(800, 340);
+            create_room_type_noti.Name = "create_room_type_noti";
+            create_room_type_noti.Size = new Size(98, 15);
+            create_room_type_noti.TabIndex = 6;
+            create_room_type_noti.Text = "Please fill * fields!";
+            create_room_type_noti.Visible = false;
+            // 
             // Room_Type_Management
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1122, 552);
+            Controls.Add(create_room_type_noti);
             Controls.Add(back_to_room_management);
             Controls.Add(button_save_room);
             Controls.Add(button_cancel);
@@ -206,5 +220,6 @@ namespace hotel_management
         private Button button_cancel;
         private Button button_save_room;
         private Button back_to_room_management;
+        private Label create_room_type_noti;
     }
 }

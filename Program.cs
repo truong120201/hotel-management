@@ -12,7 +12,7 @@ namespace hotel_management
             var openConnection = DB_Connection.Initialize();
             if(openConnection)
             {
-                Login login = new Login();
+                Room_Management_D login = new Room_Management_D();
                 login.StartPosition = FormStartPosition.CenterScreen;
                 Application.Run( login);
             }
