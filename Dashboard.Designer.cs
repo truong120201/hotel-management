@@ -34,6 +34,7 @@
             user_management_button = new Button();
             booking_button = new Button();
             accountant_button = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -79,7 +80,7 @@
             // 
             booking_button.Image = (Image)resources.GetObject("booking_button.Image");
             booking_button.ImageAlign = ContentAlignment.MiddleLeft;
-            booking_button.Location = new Point(255, 299);
+            booking_button.Location = new Point(255, 252);
             booking_button.Name = "booking_button";
             booking_button.Padding = new Padding(20, 0, 20, 0);
             booking_button.Size = new Size(248, 68);
@@ -93,7 +94,7 @@
             // 
             accountant_button.Image = (Image)resources.GetObject("accountant_button.Image");
             accountant_button.ImageAlign = ContentAlignment.MiddleLeft;
-            accountant_button.Location = new Point(593, 299);
+            accountant_button.Location = new Point(593, 252);
             accountant_button.Name = "accountant_button";
             accountant_button.Padding = new Padding(20, 0, 20, 0);
             accountant_button.Size = new Size(248, 68);
@@ -103,6 +104,20 @@
             accountant_button.UseVisualStyleBackColor = true;
             accountant_button.Click += accountant_button_Click;
             // 
+            // button1
+            // 
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(255, 343);
+            button1.Name = "button1";
+            button1.Padding = new Padding(20, 0, 20, 0);
+            button1.Size = new Size(248, 68);
+            button1.TabIndex = 1;
+            button1.Text = "Room Status";
+            button1.TextAlign = ContentAlignment.MiddleRight;
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -111,6 +126,7 @@
             Controls.Add(accountant_button);
             Controls.Add(booking_button);
             Controls.Add(user_management_button);
+            Controls.Add(button1);
             Controls.Add(room_management_button);
             Controls.Add(label1);
             Name = "Dashboard";
@@ -128,5 +144,6 @@
         private Button user_management_button;
         private Button booking_button;
         private Button accountant_button;
+        private Button button1;
     }
 }

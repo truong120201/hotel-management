@@ -22,3 +22,6 @@ C:\LEARN\WINFORM\hotel_management\obj\Debug\net6.0-windows\hotel_management.Dash
 C:\LEARN\WINFORM\hotel_management\obj\Debug\net6.0-windows\hotel_management.Properties.Resources.resources
 C:\LEARN\WINFORM\hotel_management\obj\Debug\net6.0-windows\hotel_management.Room_Management_D.resources
 C:\LEARN\WINFORM\hotel_management\obj\Debug\net6.0-windows\hotel_management.Room_Type_Management.resources
+C:\LEARN\WINFORM\hotel_management\obj\Debug\net6.0-windows\hotel_management.User_Management.resources
+C:\LEARN\WINFORM\hotel_management\obj\Debug\net6.0-windows\hotel_management.Booking_Management.resources
+C:\LEARN\WINFORM\hotel_management\obj\Debug\net6.0-windows\hotel_management.Room_Status.resources
